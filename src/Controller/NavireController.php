@@ -32,6 +32,6 @@ class NavireController extends AbstractController
             $em->flush();
             return $this->redirectToRoute('home');
         }
-        return $this->render('navire/edit.html.twig', ['form' => $form->createView(),]);
+        return $this->render('navire/edit.html.twig', ['form' => $form->createView(),'navire' => $navire,]);
     }
 }

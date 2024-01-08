@@ -19,11 +19,63 @@
         <div class="row">
             <div class="col-2" id="some-custom-id">
                 {{ form_label (form.mmsi, 'MMSI') }}
-                {{ form widget (form.mmsi, {'attr': {'placeholder': 'MMSI Number'}}) }}
+                {{ form_widget (form.mmsi, {'attr': {'placeholder': 'MMSI Number'}}) }}
             </div>
             <div class="col-2" id="some-custom-id">
                 {{ form_label (form. indicatifAppel, 'Indicatif VHF') }}
                 {{ form_widget (form.indicatifAppel, {'attr': {'placeholder': 'Saisir un indicatif'}}) }}
             </div>
         </div>
-        {% endblock %}
+        <div class="row">
+            <div class="col-2" id="some-custom-id">
+                {{ form_label (form.longueur, 'Longueur') }}
+                {{ form_widget (form.longueur, {'attr': {'placeholder': 'Longueur'}}) }}
+            </div>
+            <div class="col-2" id="some-custom-id">
+                {{ form_label (form.largeur, 'Largeur') }}
+                {{ form_widget (form.largeur, {'attr': {'placeholder': 'Largeur'}}) }}
+            </div>
+            <div class="col-2" id="some-custom-id">
+                {{ form_label (form.tirantdeau, 'Tirant d\'eau') }}
+                {{ form_widget (form.tirantdeau, {'attr': {'placeholder': 'Tirant d\'eau'}}) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2" id="some-custom-id">
+                {{ form_label (form.aisShipType, 'Type de navire') }}
+                {{ form_widget (form.aisShipType) }}
+            </div>
+            <div class="col-2" id="some-custom-id">
+                {{ form_label (form.pavillon, 'Pavillon') }}
+                {{ form_widget (form.pavillon) }}
+            </div>            
+        </div>
+
+        <div class="row">
+            <div class="col-2" id="some-custom-id">
+                {{ form_label (form.destination, 'Destination') }}
+                {{ form_widget (form.destination) }}
+            </div>
+            <div class="col-2" id="some-custom-id">
+                {{ form_label (form.eta, 'Estimed Time Arrival') }}
+                {{ form_widget (form.eta) }}
+            </div>            
+        </div>
+        </br>
+        <a type="button" class="btn btn-success" style="width:100px" href="{{ path('navire_voirtous') }}"> retour</a>
+        <button type="submit" style="width:100px" class="btn btn-success">Modifier</button>
+        {{ form_end(form) }}
+        
+        
+        <script type="text/javascript">
+            // Map appearance
+            var width = "100%";         // width in pixels or percentage
+            var height = "300";         // height in pixels
+            var names = true;           // always show ship names (defaults to false)
+
+            // Single ship tracking
+            var imo = "{{ navire.imo }}";        // display latest position (by IMO, overrides MMSI)
+            var show_track = true;      // display track line (last 24 hours)
+        </script>
+        <script type="text/javascript" src="https://www.vesselfinder.com/aismap.js"></script>
+    {% endblock %}
