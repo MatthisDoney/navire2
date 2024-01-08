@@ -175,14 +175,14 @@ class Navire
         return $this;
     }
 
-    public function getTypeNavire(): ?AisShipType
+    public function getAisShipType(): ?AisShipType
     {
-        return $this->typeNavire;
+        return $this->aisShipType;
     }
 
-    public function setTypeNavire(?AisShipType $typeNavire): static
+    public function setAisShipType(?AisShipType $typeNavire): static
     {
-        $this->typeNavire = $typeNavire;
+        $this->aisShipType = $typeNavire;
 
         return $this;
     }

@@ -82,7 +82,7 @@ class AisShipType
     {
         if (!$this->navires->contains($navire)) {
             $this->navires->add($navire);
-            $navire->setTypeNavire($this);
+            $navire->setAisShipType($this);
         }
 
         return $this;
@@ -92,8 +92,8 @@ class AisShipType
     {
         if ($this->navires->removeElement($navire)) {
             // set the owning side to null (unless already changed)
-            if ($navire->getTypeNavire() === $this) {
-                $navire->setTypeNavire(null);
+            if ($navire->getAisShipType() === $this) {
+                $navire->setAisShipType(null);
             }
         }
 

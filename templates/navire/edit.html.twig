@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent () }}Edit Navire! {% endblock %}
+
+{% block body %}
+    <div class="container">
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-2" id="some-custom-id">
+                {{ form_label(form. imo, 'IMO') }}
+                {{ form_widget (form.imo, {'attr': {'placeholder': 'IMO Number', 'readonly':'true'} }) }}
+            </div>
+
+            <div class="col-2" id="some-custom-id">
+                {{ form_label (form. nom, 'Nom du Navire') }}
+                {{ form_widget (form.nom, {'attr': {'placeholder': 'Saisir le nom du navire'}}) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2" id="some-custom-id">
+                {{ form_label (form.mmsi, 'MMSI') }}
+                {{ form widget (form.mmsi, {'attr': {'placeholder': 'MMSI Number'}}) }}
+            </div>
+            <div class="col-2" id="some-custom-id">
+                {{ form_label (form. indicatifAppel, 'Indicatif VHF') }}
+                {{ form_widget (form.indicatifAppel, {'attr': {'placeholder': 'Saisir un indicatif'}}) }}
+            </div>
+        </div>
+        {% endblock %}
